@@ -7,20 +7,23 @@ namespace bigestMatrixElement
         static void Main(string[] args)
         {
             int maxElement = int.MinValue;
-            int[,] matrixA = new int[10, 10];
+            int[,] matrixNumberes = new int[10, 10];
+            int minValue = -100;
+            int maxValue = 101;
+            int maxElementChange = 0;
 
             Random random = new Random();
 
-            for (int i = 0; i < matrixA.GetLength(0); i++)
+            for (int i = 0; i < matrixNumberes.GetLength(0); i++)
             {
-                for (int j = 0; j < matrixA.GetLength(1); j++)
+                for (int j = 0; j < matrixNumberes.GetLength(1); j++)
                 {
-                    matrixA[i, j] = random.Next(-100, 101);
-                    Console.Write(matrixA[i,j] + "\t");
+                    matrixNumberes[i, j] = random.Next(minValue, maxValue);
+                    Console.Write(matrixNumberes[i,j] + "\t");
 
-                    if(matrixA[i,j] >= maxElement)
+                    if(matrixNumberes[i,j] > maxElement)
                     {
-                        maxElement = matrixA[i,j];                       
+                        maxElement = matrixNumberes[i,j];                       
                     }
                 }
 
@@ -37,16 +40,16 @@ namespace bigestMatrixElement
             Console.WriteLine("--------------------------------------");
             Console.WriteLine();
 
-            for (int i = 0;i < matrixA.GetLength(0); i++)
+            for (int i = 0; i < matrixNumberes.GetLength(0); i++)
             {
-                for(int j = 0;  j < matrixA.GetLength(1); j++)
+                for(int j = 0;  j < matrixNumberes.GetLength(1); j++)
                 {                   
-                    if(matrixA[i,j] == maxElement)
+                    if(matrixNumberes[i,j] == maxElement)
                     {
-                        matrixA[i,j] = 0;
+                        matrixNumberes[i,j] = maxElementChange;
                     }
 
-                    Console.Write(matrixA[i,j] + "\t");
+                    Console.Write(matrixNumberes[i,j] + "\t");
                 }
 
                 Console.WriteLine();
