@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace bigestMatrixElement
 {
     internal class Program
@@ -24,6 +23,7 @@ namespace bigestMatrixElement
                         maxElement = matrixA[i,j];                       
                     }
                 }
+
                 Console.WriteLine();
             }
             
@@ -45,8 +45,10 @@ namespace bigestMatrixElement
                     {
                         matrixA[i,j] = 0;
                     }
+
                     Console.Write(matrixA[i,j] + "\t");
                 }
+
                 Console.WriteLine();
             }
         }
